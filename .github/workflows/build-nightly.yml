@@ -310,10 +310,10 @@ jobs:
       - name: Pull Eden with submodules
         shell: bash
         run: |
-          if ! git clone 'https://git.eden-emu.dev/eden-emu/eden.git' ./eden; then
-            echo "Using mirror instead..."
+          if ! git clone 'https://github.com/GH-X/eden-mirror.git' ./eden; then
+            echo "Using official instead..."
             rm -rf ./eden || true
-            git clone 'https://github.com/pflyly/eden-mirror.git' ./eden
+            git clone 'https://git.eden-emu.dev/eden-emu/eden.git' ./eden
           fi
           cd ./eden
           git submodule update --init --recursive
